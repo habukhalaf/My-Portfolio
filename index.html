@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H's Studio</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo-link">
+            <img src="images/logo.png" class="nav-logo" alt="Logo">
+        </a>
+        <a href="index.html" class="navbar-brand">H's Studio</a>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About me</a>
+            <a href="resume.pdf" target="_blank" class="nav-link">Resume</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <p>Experimenting with mixed media and graphic design. Proving every day that AI can generate an image, but it will never replace art.</p>
+        <em><a href="#portfolio" class="discover-link">Take a look &darr;</a></em>
+    </section>
+
+    <section id="portfolio" class="container">
+        <div class="two-col-grid">
+            <a href="projects/meta-ctf.html" class="project-card reveal">
+                <div class="project-thumb">
+                    <video src="static/META home cover.mp4" autoplay muted loop playsinline class="grid-media project-meta-ctf-2026"></video>
+                </div>
+                <span class="project-title">META CTF 2026</span>
+            </a>
+            <a href="projects/cscctfv7.html" class="project-card reveal">
+                <div class="project-thumb">
+                    <img src="images/CSCCTFv7 Home cover.jpg" alt="CSCCTFv7 2026" class="grid-media project-cscctfv7-2026">
+                </div>
+                <span class="project-title">CSCCTFv7 2026</span>
+            </a>
+            <a href="projects/pwnsec.html" class="project-card reveal">
+                <div class="project-thumb">
+                    <img src="images/Pwnsec CTF home cover.png" alt="PWNSEC CTF 2026" class="grid-media project-pwnsec-ctf-2026">
+                </div>
+                <span class="project-title">PWNSEC CTF 2026</span>
+            </a>
+            <a href="projects/csc.html" class="project-card reveal">
+                <div class="project-thumb">
+                    <img src="images/CSC Home cover.jpg" alt="Cyber security club PSUT 2025-2026" class="grid-media project-cyber-security-club-psut-2025-2026">
+                </div>
+                <span class="project-title">Cyber security club PSUT 2025-2026</span>
+            </a>
+            <a href="projects/acm.html" class="project-card reveal">
+                <div class="project-thumb">
+                    <img src="images/ACM Home Cover.jpg" alt="ACM Marathon 2025" class="grid-media project-acm-marathon-2025">
+                </div>
+                <span class="project-title">ACM Marathon 2025</span>
+            </a>
+            <a href="projects/bunny-bites.html" class="project-card reveal">
+                <div class="project-thumb project-thumb-bunny-bites">
+                    <img src="images/bunny bites home cover.jpg" alt="Bunny Bites" class="grid-media project-bunny-bites">
+                </div>
+                <span class="project-title">Bunny Bites</span>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var revealElements = document.querySelectorAll('.reveal');
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            });
+
+            revealElements.forEach(function (el) {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
