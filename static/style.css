@@ -436,7 +436,7 @@ code {
 }
 
 /* Back card fill: an <img> or a coloured placeholder div */
-.stack-card > img:not(.card-deco),
+.stack-card > img,
 .stack-card-placeholder {
     display: block;
     width: 100%;
@@ -471,80 +471,6 @@ code {
     height: 100%;
     object-fit: cover;
     display: block;
-}
-
-/* Real clip / pin images gripping the top edge of the main card.
-   Every source PNG is a 1080x1350 canvas with transparent padding, so each
-   variant sets the canvas width and a top offset that lands the visible
-   object on the card edge. */
-.card-deco {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    z-index: 10;
-    width: var(--deco-width);
-    height: auto;
-    /* Centre on the card, then drop the visible object onto the top edge */
-    transform: translate(calc(-50% + var(--deco-nudge-x, 0px)), var(--deco-y)) rotate(var(--deco-tilt, 0deg));
-    filter: drop-shadow(1px 3px 2px rgba(36, 25, 41, 0.3));
-    pointer-events: none;
-    user-select: none;
-}
-
-/* Silver paperclip (1): top ~third of the loop above the edge, rest over the cover */
-.card-deco--paperclip {
-    --deco-width: 68px;
-    --deco-y: -10px;
-    --deco-tilt: -4deg;
-}
-
-/* Round-hinge bulldog clip (2): jaw bar straddles the white border */
-.card-deco--bulldog {
-    --deco-width: 96px;
-    --deco-y: -44px;
-}
-
-/* Flat red bulldog clip (3): tab just peeks above, jaw bites the cover */
-.card-deco--clip-flat {
-    --deco-width: 96px;
-    --deco-y: -42px;
-}
-
-/* Binder clip (5): handles stand up, jaw sits over the white border */
-.card-deco--binder {
-    --deco-width: 78px;
-    --deco-y: -46px;
-}
-
-/* Push pin (6): head overhangs the edge, needle goes into the cover.
-   The artwork sits right of its canvas centre and has its own shadow. */
-.card-deco--pin {
-    --deco-width: 92px;
-    --deco-y: -26px;
-    --deco-nudge-x: -7px;
-    filter: none;
-}
-
-/* Notification dot: artwork count, centred on the cover image's top-right corner */
-.card-badge {
-    position: absolute;
-    top: -6px;   /* 8px card border - 14px (half the dot) */
-    right: -6px;
-    z-index: 2;
-    display: grid;
-    place-items: center;
-    width: 28px;
-    height: 28px;
-    padding-top: 1px; /* nudge digits to optical centre */
-    border: 2px solid #fff;
-    border-radius: 50%;
-    background-color: #2563eb;
-    color: #fff;
-    font-family: var(--font-body);
-    font-size: 0.75rem;
-    font-weight: 300;
-    line-height: 1;
-    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
 }
 
 /* Hover: fan the deck out */
